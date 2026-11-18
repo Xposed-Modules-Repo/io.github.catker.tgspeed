@@ -54,3 +54,14 @@
   TGSpeed+ 负责解除客户端本地并发、分块与速率预算瓶颈；最终上限仍会受限于你当前的代理/网络链路带宽、文件所在数据中心（DC）以及 Telegram 服务端的连接速率策略。
 - **Telegram 更新后显示「当前 Telegram 版本暂未适配」怎么办？**
   模块内置了写前字段安全校验，遇到未知客户端结构变更时会自动跳过写入以保护应用稳定，并在设置面板展开 **「故障排查信息」**，点击一键复制即可保存完整环境快照等待后续版本适配。
+
+---
+
+## 参考与致谢
+
+- **TGSpeed+ 3.1**
+  借鉴其面向混淆版 Telegram 客户端的核心加速与适配思路——通过 DEX 结构指纹定位 `FileLoadOperation` 并按声明顺序映射关键字段，结合 `ConnectionsManager` 下载连接槽多路轮转与解除本地下载字节预算限制，在提升大文件分块（`1 MiB`）与并发下限（`12`）的同时自动避开快拍（Story）与小分片限流退避场景。
+- **[Telegram Speed Hook 2.1](https://github.com/AraafRoyall/Telegram-Speed-Hook)（@AraafRoyall）**
+  致谢上游作者 Araaf Royall 提出通过 Xposed Hook 调优 `FileLoadOperation` 分块大小与并发请求数的原始思路（`TGSpeed+ 3.1` 即为其维护衍生版本）。
+- **TGSpeed+ 4.x 独立重构**
+  在上述核心思路的基础上，本模块基于现代 `libxposed API 102` 从零独立重构，引入精确去优化（`deoptimize`）与写前字段安全校验机制，并全新打造了 Telegram 原生设置底部面板、原生下载图标闪电角标与看视频零打扰轻提示体系。
