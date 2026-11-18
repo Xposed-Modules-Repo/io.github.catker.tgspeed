@@ -59,9 +59,5 @@
 
 ## 参考与致谢
 
-- **TGSpeed+ 3.1**
-  借鉴其面向混淆版 Telegram 客户端的核心加速与适配思路——通过 DEX 结构指纹定位 `FileLoadOperation` 并按声明顺序映射关键字段，结合 `ConnectionsManager` 下载连接槽多路轮转与解除本地下载字节预算限制，在提升大文件分块（`1 MiB`）与并发下限（`12`）的同时自动避开快拍（Story）与小分片限流退避场景。
 - **[Telegram Speed Hook 2.1](https://github.com/AraafRoyall/Telegram-Speed-Hook)（@AraafRoyall）**
-  致谢上游作者 Araaf Royall 提出通过 Xposed Hook 调优 `FileLoadOperation` 分块大小与并发请求数的原始思路（`TGSpeed+ 3.1` 即为其维护衍生版本）。
-- **TGSpeed+ 4.x 独立重构**
-  在上述核心思路的基础上，本模块基于现代 `libxposed API 102` 从零独立重构，引入精确去优化（`deoptimize`）与写前字段安全校验机制，并全新打造了 Telegram 原生设置底部面板、原生下载图标闪电角标与看视频零打扰轻提示体系。
+  致谢原作者 Araaf Royall 提出通过 Xposed Hook 调优 `FileLoadOperation` 分块大小与并发请求数以提升 Telegram 下载速度的核心思路。**TGSpeed+** 在此思路基础上继续扩展了针对混淆版本的 DEX 结构指纹适配、多连接槽轮转与字节预算解除等策略，并在 `4.x` 版本基于现代 `libxposed API 102` 完成全新独立重构。
