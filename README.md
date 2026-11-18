@@ -2,6 +2,8 @@
 
 自动提升 Telegram 官方 Android 客户端的文件、图片与视频下载速度。基于现代 `libxposed API 102` 构建，无桌面图标、零系统权限、开箱即用。
 
+已在 **Telegram `13.2.2`**（Google Play 版 `73031` 与官网直装版 `73039`）实测通过。
+
 ---
 
 ## 功能亮点
@@ -32,6 +34,7 @@
 | --- | --- |
 | 框架 | 支持 **libxposed API 102+** 的框架（新版 LSPosed / Vector 等） |
 | 支持应用 | Telegram 官方版（`org.telegram.messenger`）与官网直装版（`org.telegram.messenger.web`） |
+| 实测版本 | Telegram `13.2.2`（`73031` / `73039`），基于动态结构指纹自动兼容同架构后续版本 |
 | 系统版本 | Android 8.0（API 26）及以上 |
 
 ---

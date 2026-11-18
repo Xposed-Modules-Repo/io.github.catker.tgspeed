@@ -1,1 +1,1 @@
-Telegram 官方 Android 客户端下载加速模块，自动提升文件、图片与视频下载速度，内置 Telegram 原生设置面板、下载图标状态角标与看视频零打扰轻提示（需 libxposed API 102+）。
+Telegram 官方 Android 客户端下载加速模块，自动提升文件、图片与视频下载速度，内置 Telegram 原生设置面板、下载图标状态角标与看视频零打扰轻提示（需 libxposed API 102+，已在 Telegram 13.2.2 实测）。
